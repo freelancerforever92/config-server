@@ -6,6 +6,8 @@ spring:
 datasource:
     host: localhost
     port: 3309
+spring:
+  datasource:
     database: farmdeals
     password: p@55word@#
     url: jdbc:mysql://${datasource.host}:${datasource.port}/${datasource.database}?useSSL=false&serverTimezone=UTC
@@ -13,7 +15,9 @@ datasource:
     password: ${datasource.password}
 
 # Hibernate properties
-spring.jpa.hibernate.ddl-auto=update
+jpa:
+    hibernate:
+      ddl-auto: update
 #spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 
 # JPA properties
