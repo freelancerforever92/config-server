@@ -1,20 +1,13 @@
 spring:
   application:
-    name: CLOUD-CONFIG-CLIENT    
-application:
+    name: CLOUD-CONFIG-CLIENT
     startup:
         message: ${spring.application.name} is up and running on port number ${server.port}
 datasource:
     database: farmdeals
     host: localhost
     port: 3309
-server:
-    port: 7002
-    servlet:
-        context-path: /api/v1
 spring:
-    application:
-        name: DOMAIN SERVICE
     datasource:
         password: p@55word@#
         url: jdbc:mysql://${datasource.host}:${datasource.port}/${datasource.database}?useSSL=false&serverTimezone=UTC
