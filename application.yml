@@ -1,25 +1,28 @@
 spring:
   application:
-    name: CLOUD-CONFIG-CLIENT
-    
-# DATA SOURCE SETTING
+    name: CLOUD-CONFIG-CLIENT    
+application:
+    startup:
+        message: ${spring.application.name} is up and running on port number ${server.port}
 datasource:
+    database: farmdeals
     host: localhost
     port: 3309
+server:
+    port: 7002
+    servlet:
+        context-path: /api/v1
 spring:
-  datasource:
-    database: farmdeals
-    password: p@55word@#
-    url: jdbc:mysql://${datasource.host}:${datasource.port}/${datasource.database}?useSSL=false&serverTimezone=UTC
-    username: root
-    password: ${datasource.password}
-
-# Hibernate properties
-jpa:
-    hibernate:
-      ddl-auto: update
-#spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
-
-# JPA properties
-spring.jpa.show=true
-spring.jpa.properties.hibernate.format_sql=true
+    application:
+        name: DOMAIN SERVICE
+    datasource:
+        password: p@55word@#
+        url: jdbc:mysql://${datasource.host}:${datasource.port}/${datasource.database}?useSSL=false&serverTimezone=UTC
+        username: root
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                format_sql: true
+        show: true
