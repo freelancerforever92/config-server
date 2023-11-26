@@ -8,10 +8,9 @@ datasource:
     port: 3309
     database: farmdeals
     password: p@55word@#
-    
-# spring.datasource.url=jdbc:mysql://${datasource.host}:${datasource.port}/${datasource.database}?useSSL=false&serverTimezone=UTC
-# spring.datasource.username=root
-# spring.datasource.password=${datasource.password}
+    url=jdbc:mysql://${datasource.host}:${datasource.port}/${datasource.database}?useSSL=false&serverTimezone=UTC
+    username=root
+    password=${datasource.password}
 
 # Hibernate properties
 spring.jpa.hibernate.ddl-auto=update
